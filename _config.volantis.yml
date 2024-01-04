@@ -1,0 +1,163 @@
+############################### Navigation Bar ############################### > start
+# 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    icon:
+    title:
+  menu:
+    - name: 博客
+      icon: fa-solid fa-rss
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 归档
+      icon: fa-solid fa-archive
+      url: archives/
+    - name: 友链
+      icon: fa-solid fa-link
+      url: friends/
+    - name: 关于
+      icon: fa-solid fa-info-circle
+      url: about/
+  search: Search...   # Search bar placeholder
+############################### Navigation Bar ############################### > end
+#fotter
+site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, info, copyright]
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:me@xaoxuu.com
+    - icon: fab fa-github
+      url: https://github.com/xaoxuu
+    - icon: fas fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=63035382
+  copyright: '[Copyright © 2024-2025 XiaoJiaCheng](/)'
+  # You can add your own property here. (Support markdown, for example: br: '<br>')
+  br: '<br>'
+#fotter
+
+### 自定义右键 新
+rightmenus:
+  enable: true
+  # 右键菜单项及加载顺序
+  # 内容示例：plugins.[组名], menus.[组名], hr(分割线，推荐去线留白), music(音乐控制器)
+  order: 
+    - plugins.navigation
+    - hr
+    - plugins.inputBox
+    - plugins.seletctText
+    - plugins.elementCheck
+    # - plugins.elementImage
+    - menus.link
+    - hr
+    - menus.darkMode
+    - plugins.articlePage
+    - music
+  ############################
+  # - {id: '', name: '', icon: '', link: '', event: '', group: ''}
+  # id: 唯一值
+  # name: 用于菜单名称显示
+  # icon: 用于菜单图标显示
+  # link: 跳转链接
+  # event: 事件，当输入内容不为内置事件时，作 JavaScript 代码执行
+  # group: 菜单项所处分组名称
+  # 注： 
+  # 1. link/event 二选一，同时出现时仅处理 link
+  # 2. 内置事件列表： copyText, copyLink, copyPaste, copyAll, copyCut, copyImg, printMode, readMode
+  # 3. 内置组列表：navigation, inputBox, seletctText, elementCheck, elementImage, articlePage
+  # 4. plugins 列允许自定义组内项目
+  # 5. menus   列允许自定义组及其内容
+  # 6. 除 navigation 外的内置组，在显示时会隐藏含 link 属性的菜单项
+  ###########################
+  # 基础项设置
+  options:
+    # 图标前缀 fa-solid, fa-regular, fa-light, fa-thin, fa-duotone, fa-brands
+    iconPrefix: fa-solid
+    # 例外，在 articlePage 组显示时（文章页）时依旧显示含 link 属性的菜单项
+    articleShowLink: false
+    # 当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用
+    musicAlwaysShow: false
+    # 适用于复制图片文件的场景，当图片源未设置 Access-Control-Allow-Origin 时，图片复制由于 CORS 问题失败
+    # 你可以自行部署相应项目解决该问题，详见：https://github.com/Rob--W/cors-anywhere 或者 https://github.com/Zibri/cloudflare-cors-anywhere
+    corsAnywhere: 
+  # 右键内置组，预置实现
+  plugins:
+    # 导航组件
+    # 横向排列，共用一行，仅显示图标 (原则上支持的数量不限)
+    navigation: 
+      - {id: 'left', name: '转到上一页', icon: 'fa-solid fa-arrow-left', event: 'history.back()', group: 'navigation'}
+      - {id: 'right', name: '转到下一页', icon: 'fa-solid fa-arrow-right', event: 'history.forward()', group: 'navigation'}
+      - {id: 'redo', name: '刷新当前页面', icon: 'fa-solid fa-redo', event: 'window.location.reload()', group: 'navigation'}
+      #- {id: 'up', name: '回到顶部', icon: 'fa-solid fa-arrow-up', event: 'VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)', group: 'navigation'}
+      - {id: 'home', name: '回到首页', icon: 'fa-solid fa-home', link: '/', group: 'navigation'}
+    # 文本输入框相关组件
+    # 生效于 input/textarea，粘贴、剪切、全选
+    inputBox:
+      - {id: 'copyPaste', name: '粘贴文本', icon: 'fa-solid fa-paste', event: 'copyPaste', group: 'inputBox'}
+      - {id: 'copyAll', name: '全选文本', icon: 'fa-solid fa-object-ungroup', event: 'copyAll', group: 'inputBox'}
+      - {id: 'copyCut', name: '剪切文本', icon: 'fa-solid fa-cut', event: 'copyCut', group: 'inputBox'}
+    # 文本选中类组件
+    # 生效于右键选中文本，__text__ 为选中的文本。     
+    seletctText:
+      - {id: 'copyText', name: '复制文本', icon: 'fa-solid fa-copy', event: 'copyText', group: 'seletctText'}
+      - {id: 'searchWord', name: '站内搜索', icon: 'fa-solid fa-search', event: 'OpenSearch(__text__)', group: 'seletctText'}
+      - {id: 'CSDNSearch', name: 'CSDN搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://so.csdn.net/so/search?q=${__text__}`)', group: 'seletctText'}
+      - {id: 'baiduSearch', name: '百度搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://www.baidu.com/s?wd=${__text__}`)', group: 'seletctText'}
+      - {id: 'bingSearch', name: '必应搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://cn.bing.com/search?q=${__text__}`)', group: 'seletctText'}
+      # - {id: 'googleSearch', name: '谷歌搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://www.google.com/search?q=${__text__}`)', group: 'seletctText'}
+    # 链接判断组件
+    # 生效于链接处的右键行为，__link__ 为链接地址
+    elementCheck:
+      - {id: 'openTab', name: '新标签页打开', icon: 'fa-solid fa-external-link-square-alt', event: 'window.open(__link__)', group: 'elementCheck'}
+      - {id: 'copyLink', name: '复制链接地址', icon: 'fa-solid fa-link', event: 'copyLink', group: 'elementCheck'}
+    # 图片判断类组件
+    # 生效于图片类的右键行为，__link__ 为链接地址
+    # elementImage:
+      # - {id: 'copyImg', name: '复制图片', icon: 'fa-solid fa-image', event: 'copyImg', group: 'elementImage'}
+      # - {id: 'googleImg', name: '谷歌识图', icon: 'fa-solid fa-images', event: 'window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)', group: 'elementImage'}
+    # 文章页面组件
+    # 生效于 post.article 页面
+    articlePage:
+      - {id: 'printMode', name: '打印页面', icon: 'fa-solid fa-print', event: 'printMode', group: 'articlePage'}
+      - {id: 'readMode', name: '阅读模式', icon: 'fa-solid fa-book-open', event: 'readMode', group: 'articlePage'}
+  # 右键自定义菜单区域
+  menus:
+    link:
+      # - {id: 'help', name: '常见问题', icon: 'fa-solid fa-question', link: 'https://volantis.js.org/faqs/', group: 'link'}
+      # - {id: 'examples', name: '示例博客', icon: 'fa-solid fa-rss', link: 'https://volantis.js.org/examples/', group: 'link'}
+      # - {id: 'contributors', name: '加入社区', icon: 'fa-solid fa-fan', link: 'https://volantis.js.org/contributors/', group: 'link'}
+      # - hr
+       - {id: 'source_docs', name: '本站源码', icon: 'fa-solid fa-code-branch', link: 'https://gitee.com/clever-ming/clever-ming/', group: 'link'}
+       - {id: 'source_theme', name: 'volantis社区', icon: 'fa-solid fa-code-branch', link: 'https://volantis.js.org/', group: 'link'}
+    darkMode: 
+      - {id: 'darkMode', name: '夜间模式', icon: 'fa-solid fa-moon', event: 'volantis.dark.toggle()', group: 'darkMode'}
+###
+custom_css:
+  font_smoothing: true # font-smoothing for webkit
+  navbar:
+    height: 64px
+    width: auto # auto, max
+    effect: [shadow, blur] # [shadow, floatable, blur]
+  scrollbar:
+    size: 4px
+    border: 2px
+    color: '#2196f3'
+    hover: '#ff5722'
+  cursor:
+    enable: true
+    text: volantis-static/media/cursor/text.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/text.png
+    pointer: volantis-static/media/cursor/pointer.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png
+    default: volantis-static/media/cursor/left_ptr.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png
+    not-allowed: volantis-static/media/cursor/circle.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/circle.png
+    zoom-out: volantis-static/media/cursor/zoom-out.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/zoom-out.png
+    zoom-in: volantis-static/media/cursor/zoom-in.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/zoom-in.png
+    grab: volantis-static/media/cursor/openhand.png # https://gcore.jsdelivr.net/gh/inkss/common@1/cursor/openhand.png

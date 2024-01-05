@@ -3,9 +3,9 @@
 navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
-    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img:  # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
     icon:
-    title:
+    title: Chaos
   menu:
     - name: 博客
       icon: fa-solid fa-rss
@@ -27,6 +27,67 @@ navbar:
       url: about/
   search: Search...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
+#初始界面
+cover:
+  height_scheme: full # full, half
+  layout_scheme: dock
+  # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)  任你选择
+  display:
+    home: true
+    archive: true
+    others: false # can be written in front-matter 'cover: true'
+  background: https://s1.imagehub.cc/images/2024/01/05/9f71d5e9b52f4f2dba8d29b2ba9dc34f.jpeg # 可以是任意的图片api，百度即可
+  logo: # 显示在中间标题上的，使用logo会挡壁纸 = =
+  title: 'Chaos'
+  subtitle: '世界纷繁复杂，或许沉默是最好的回答'
+  search: 搜你想搜 # search bar placeholder
+  features:
+    - name: 首页
+      icon: fa-solid fa-rss
+      img: volantis-static/media/twemoji/assets/svg/1f5c3.svg
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      img: volantis-static/media/twemoji/assets/svg/1f396.svg 
+      url: /categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      img: volantis-static/media/twemoji/assets/svg/1f389.svg 
+      url: /tags/
+    - name: 时间轴
+      icon: fa-solid fa-archive
+      img: volantis-static/media/twemoji/assets/svg/1f516.svg 
+      url: /archives/
+    - name: 友情链接
+      icon: fa-solid fa-link
+      img: volantis-static/media/twemoji/assets/svg/1f4f0.svg 
+      url: /friends/
+    - name: 网页源码
+      icon: fa fa-code-branch
+      img: volantis-static/media/twemoji/assets/svg/1f9ec.svg 
+      url: https://gitee.com/clever-ming/clever-ming/
+
+sidebar:
+  # 侧边栏组件库
+  widget_library:
+    # ---------------------------------------
+    # blogger info widget
+    blogger:
+      class: blogger
+      display: [desktop] # [desktop, mobile]
+      avatar: https://s1.imagehub.cc/images/2024/01/05/3ae2e871459a8cd42806ce4f22d1dbf2.png # 这里放置你的logo地址
+      shape: circle # circle, rectangle
+      url: /about/
+      title: 
+      subtitle:
+      jinrishici: True # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social: 
+      # 注意！这里需要自行添加，不然就会有下图情况
+        - icon: fas fa-g
+          url: https://gitee.com/clever-ming
+        - icon: fab fa-bilibili
+          url: https://space.bilibili.com/87679554   
+    # ---------------------------------------
 #fotter
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
@@ -37,7 +98,7 @@ site_footer:
     - icon: fas fa-envelope
       url: mailto:me@xaoxuu.com
     - icon: fab fa-github
-      url: https://github.com/xaoxuu
+      url: https://github.com/xiao-jiacheng
     - icon: fas fa-headphones-alt
       url: https://music.163.com/#/user/home?id=63035382
   copyright: '[Copyright © 2024-2025 XiaoJiaCheng](/)'
@@ -141,6 +202,7 @@ rightmenus:
     darkMode: 
       - {id: 'darkMode', name: '夜间模式', icon: 'fa-solid fa-moon', event: 'volantis.dark.toggle()', group: 'darkMode'}
 ###
+#
 custom_css:
   font_smoothing: true # font-smoothing for webkit
   navbar:

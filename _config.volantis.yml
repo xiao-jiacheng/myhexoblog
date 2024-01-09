@@ -36,10 +36,11 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://s1.imagehub.cc/images/2024/01/05/9f71d5e9b52f4f2dba8d29b2ba9dc34f.jpeg # 可以是任意的图片api，百度即可
+  background: http://nas.xiaojiacheng.top:5543/blog_pic/idx/1.jpg # 可以是任意的图片api，百度即可
   logo: # 显示在中间标题上的，使用logo会挡壁纸 = =
   title: 'Chaos'
-  subtitle: '世界纷繁复杂，或许沉默是最好的回答'
+  text-shadow: 2px 2px 10px #000 !important;
+  subtitle: '世界纷繁复杂,或许沉默是最好的回答'
   search: 搜你想搜 # search bar placeholder
   features:
     - name: 首页
@@ -75,12 +76,12 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop] # [desktop, mobile]
-      avatar: https://s1.imagehub.cc/images/2024/01/05/3ae2e871459a8cd42806ce4f22d1dbf2.png # 这里放置你的logo地址
+      avatar: http://nas.xiaojiacheng.top:5543/blog_pic/idx/康娜.png # 这里放置你的logo地址
       shape: circle # circle, rectangle
       url: /about/
-      title: 
-      subtitle:
-      jinrishici: True # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      title: 感谢我特别特别好🥰
+      subtitle: 💓(特别特别的好)💓
+      jinrishici: False # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social: 
       # 注意！这里需要自行添加，不然就会有下图情况
         - icon: fas fa-g
@@ -205,6 +206,10 @@ rightmenus:
 #
 custom_css:
   font_smoothing: true # font-smoothing for webkit
+
+    #.cover-wrapper .list-h a{
+    #  text-shadow: 2px 2px 10px #000 !important;
+    #}
   navbar:
     height: 64px
     width: auto # auto, max

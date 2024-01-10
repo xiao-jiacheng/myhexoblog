@@ -36,7 +36,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: http://nas.xiaojiacheng.top:5543/blog_pic/idx/1.jpg # 可以是任意的图片api，百度即可
+  background: http://nas.xiaojiacheng.top:5543/blog_pic/idx/2.jpg # 可以是任意的图片api，百度即可
   logo: # 显示在中间标题上的，使用logo会挡壁纸 = =
   title: 'Chaos'
   text-shadow: 2px 2px 10px #000 !important;
@@ -153,6 +153,8 @@ rightmenus:
     corsAnywhere: 
   # 右键内置组，预置实现
   plugins:
+    busuanzi:
+      enable: true
     # 导航组件
     # 横向排列，共用一行，仅显示图标 (原则上支持的数量不限)
     navigation: 

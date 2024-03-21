@@ -66,9 +66,9 @@ TA List 可由如下两种方式产生：
 由 MCC、MNC 和 TAC 组成，在全球范围内唯一标识一个跟踪区(TA)。
 
 =============================================
-|                 TAI                       |
+\|                 TAI                       \|
 ---------------------------------------------
-|   MCC     |  MNC    |      TAC            |
+\|   MCC     \|  MNC    \|      TAC            \|
 
 - MCC Mobile Country Code
 移动国家码，标识一个国家  (460 中国)
@@ -117,6 +117,9 @@ TODO: 补充流程图
 ### 切换  handover
 切换使用 Handover 表示，处于 ECM-CONNECTED 状态的终端在不同小区间发生移动时，源eNodeB 提供的信号越来越弱，目标 eNodeB 提供的信号越来越强，此时可以在目标 eNodeB 所在的 EPC 网络中为终端预先建立承载资源，这样在源 eNodeB 侧连接释放后，可以很快地在目标eNodeB 为终端建立连接，减少在目标网络申请资源的等待时间，这种目标侧预先准备资源的过程称为切换。
 #### s1 切换
+![s1切换1](http://nas.xiaojiacheng.top:5543//blog_pic/uploads/2024/03/20240319170309.png)
+![s1切换2](http://nas.xiaojiacheng.top:5543//blog_pic/uploads/2024/03/20240319170427.png)
+
 基于 S1 接口的切换，eNodeB 之间不存在 X2 接口或存在 X2 接口，但该接口不可用，所采用
 的切换方式，具体可分为：
 MME 不变，仅 SGW 和 eNodeB 之间改变的切换。

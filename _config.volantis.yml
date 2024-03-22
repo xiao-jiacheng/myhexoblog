@@ -107,6 +107,23 @@ site_footer:
   br: '<br>'
 #fotter
 
+############################### Comments ############################### > start
+comments:
+  title: <i class='fa-solid fa-comments'></i> 评论
+  subtitle:
+  service: twikoo 
+  # 可选评论系统 #
+  
+
+  # Twikoo
+  # https://twikoo.js.org/
+  twikoo:
+    envId: https://xiaojiacheng-twikoo.hf.space # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+    placeholder: test111 #全局评论占位，也可以在管理面板中的配置管理处设置（此处优先级更高）
+    visitor: true # 是否显示文章阅读数
+############################### Comments ############################### > end 
+
+
 ### 自定义右键 新
 rightmenus:
   enable: true
@@ -151,10 +168,6 @@ rightmenus:
     # 适用于复制图片文件的场景，当图片源未设置 Access-Control-Allow-Origin 时，图片复制由于 CORS 问题失败
     # 你可以自行部署相应项目解决该问题，详见：https://github.com/Rob--W/cors-anywhere 或者 https://github.com/Zibri/cloudflare-cors-anywhere
     corsAnywhere: 
-  comment:
-    artalk:
-      site: 'testartalk'
-      server: 'http://nas.xiaojiacheng.top:60003'
   # 右键内置组，预置实现
   plugins:
     busuanzi:

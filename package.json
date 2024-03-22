@@ -27,6 +27,7 @@
     "hexo-theme-kira": "^1.4.5",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-volantis": "^5.8.0",
-    "live2d-widget-model-unitychan": "^1.0.5"
+    "live2d-widget-model-unitychan": "^1.0.5",
+    "twikoo": "^1.6.32"
   }
 }

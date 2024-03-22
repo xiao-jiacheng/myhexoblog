@@ -6,6 +6,8 @@ date: 2024/1/30
 
 记录一点4g学习内容
 
+EPC基础概念 和 基本业务流程
+
 <!-- more -->
 
 ### 终端状态管理
@@ -18,12 +20,14 @@ date: 2024/1/30
 - EMM-REGISTERED
 终端可以通过成功的附着流程或位置更新流程进入此状态，在该状态下，EPC 知道终端的确切位置或者终端所在的 TA List（Tracking Area List，跟踪区列表）。
 
+![](http://nas.xiaojiacheng.top:5543//blog_pic/uploads/2024/03/20240321170221.png)
 #### ECM
 - ECM-IDLE
 终端与 EPC 没有 NAS（Non-Access Stratum，非接入层）信令连接时，终端进入 ECM-IDLE 态。此状态下的终端在 eNodeB 内没有上下文，也没有 S1-MME 和 S1-U 连接。
 - ECM-CONNECTED
 终端和 EPC 有 NAS 信令连接，此状态下 EPC 知道为终端提供服务的eNodeB 的 eNodeB ID。
 
+![](http://nas.xiaojiacheng.top:5543//blog_pic/uploads/2024/03/20240321170132.png)
 
 ### attach
 附着流程，终端设备在安装SIM卡，接入到网络的第一个流程(手机飞行模式开启和关闭对应附着和区附着)。通过附着流程，终端可以注册到网络中，并获取网络提供的服务，与此同时，网络将获取终端所在的位置信息，即 TA List。附着流程会建立一个缺省的 EPS 承载(默认承载id为5)，该承载可为终端提供永久在线的 IP 连接。根据业务需求，附着流程可能触发一个或多个专有承载的建立。

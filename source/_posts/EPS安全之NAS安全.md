@@ -6,10 +6,13 @@ date: 2024/3/22
 
 
 MME中处理EPS安全上下文的原则，以及用于UE和MME之间的EPS NAS消息的安全保护的过程。安全保护包括EMM和ESM NAS消息的完整性保护和加密。
-
+<!-- more -->
 ### NAS count 和 NAS sequence number
-每个EPS安全上下文应与两个独立的计数器NAS COUNT相关联：一个与上行链路NAS相关消息和一个与下行链路NAS消息有关的消息。NAS计数计数器使用24位内部表示和 由UE和MME独立维护。NAS计数应构建为NAS序列号（8 最低有效位）与NAS溢出计数器（16个最高有效位）连接。 当NAS计数输入到NAS加密或NAS完整性算法时，应将其视为32位实体其应通过在最高有效位中用8个零填充24位内部表示来构造。
+- NAS COUNT
+> 每个EPS安全上下文应与两个独立的计数器NAS COUNT相关联：一个与上行链路NAS相关消息和一个与下行链路NAS消息有关的消息。NAS计数计数器使用24位内部表示和 由UE和MME独立维护。NAS计数应构建为NAS序列号（8 最低有效位）与NAS溢出计数器（16个最高有效位）连接。 当NAS计数输入到NAS加密或NAS完整性算法时，应将其视为32位实体其应通过在最高有效位中用8个零填充24位内部表示来构造。
 
+- NAS SEQUENCE NUMBER
+序列数与nas 计数器相似，ue侧与mme独立维护序列计数，且在nas层消息中有ie体现；mme统计mme downlink消息的数目，ue统计 基站下发init/uplink消息数目。与NAS COUNT区别为 NAS COUNT 只在s1消息包含nas层消息时才对计数自增。
 
 ### 完整性保护和校验
 integrity protection 完整性保护

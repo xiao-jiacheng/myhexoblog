@@ -109,8 +109,7 @@ site_footer:
 
 ############################### Comments ############################### > start
 comments:
-  title: <i class='fa-solid fa-comments'></i> 评论
-  subtitle:
+  subtitle: 111
   service: twikoo 
   # 可选评论系统 #
   
@@ -119,10 +118,9 @@ comments:
   # https://twikoo.js.org/
   twikoo:
     envId: https://xiaojiacheng-twikoo.hf.space # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-    placeholder: test111 #全局评论占位，也可以在管理面板中的配置管理处设置（此处优先级更高）
+    placeholder: 说点啥吧，我害怕😭 #全局评论占位，也可以在管理面板中的配置管理处设置（此处优先级更高）
     visitor: true # 是否显示文章阅读数
 ############################### Comments ############################### > end 
-
 
 ### 自定义右键 新
 rightmenus:

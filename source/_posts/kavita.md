@@ -5,12 +5,19 @@ date: 2024/4/9
 ---
 
 
-## kavita
+### kavita
+个人图书管理
 
-个人漫画管理
+### 支持格式
+
 支持漫画格式
-png 打包zip cbz
-pdf
+- zip png打包格式 zip命名由系列名加卷名组成 如:```'异兽都市 v01.zip'```
+- cbz [comic book zip] 专门说明漫画的格式，与zip一致，是多图片的打包（实际使用zip修改后缀名为cbz即可，cbr即tar的后缀名修改）
+- pdf 
+
+支持电子书格式
+- ebpb
+- pdf
 
 ### docker 部署
 创建映射用的文件夹
